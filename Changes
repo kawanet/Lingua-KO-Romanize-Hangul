@@ -1,0 +1,7 @@
+# Lingua::KO::Romanize::* modules Changes
+
+2006/04/04 (0.12)
+	- chars() method added
+
+2006/03/26 (0.11)
+	- first release
