@@ -19,7 +19,9 @@ SYNOPSIS
         }
 
 DESCRIPTION
-    Hangul is phonemic characters of the Korean language.
+    Hangul is phonemic characters of the Korean language. This module
+    follows the "Revised Romanization of Korean" which was released on July
+    7, 2000 as the official system in South Korea.
 
   $conv = Lingua::KO::Romanize::Hangul->new();
     This constructer methods returns a new object.
@@ -40,17 +42,20 @@ DESCRIPTION
         $array[1][0]        # secound Korean character itself
         $array[1][1]        # its romanized letters
 
+UTF-8 FLAG
+    This module treats utf8 flag transparently.
+
 SEE ALSO
-    Lingua::JA::Romanize::Japanese Lingua::ZH::Romanize::Pinyin
+    Lingua::JA::Romanize::Japanese for Japanese
+
+    Lingua::ZH::Romanize::Pinyin for Chinese
+
+    http://www.korean.go.kr/06_new/rule/rule06.jsp
 
     http://www.kawa.net/works/perl/romanize/romanize-e.html
 
-AUTHOR
-    Yusuke Kawasaki http://www.kawa.net/
-
 COPYRIGHT AND LICENSE
-    Copyright (c) 1998-2006 Yusuke Kawasaki. All rights reserved.
-
-    This program is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    Copyright (c) 1998-2008 Yusuke Kawasaki. All rights reserved. This
+    program is free software; you can redistribute it and/or modify it under
+    the same terms as Perl itself.
 
