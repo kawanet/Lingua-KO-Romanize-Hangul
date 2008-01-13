@@ -23,8 +23,9 @@ Lingua::KO::Romanize::Hangul - Romanization of Korean language
 =head1 DESCRIPTION
 
 Hangul is phonemic characters of the Korean language.
-This module follows the C<Revised Romanization of Korean> which
-was released on July 7, 2000 as the official system in South Korea.
+This module follows the C<Revised Romanization of Korean>
+which was released on July 7, 2000
+as the official romanization system in South Korea.
 
 =head2 $conv = Lingua::KO::Romanize::Hangul->new();
 

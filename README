@@ -21,7 +21,7 @@ SYNOPSIS
 DESCRIPTION
     Hangul is phonemic characters of the Korean language. This module
     follows the "Revised Romanization of Korean" which was released on July
-    7, 2000 as the official system in South Korea.
+    7, 2000 as the official romanization system in South Korea.
 
   $conv = Lingua::KO::Romanize::Hangul->new();
     This constructer methods returns a new object.
