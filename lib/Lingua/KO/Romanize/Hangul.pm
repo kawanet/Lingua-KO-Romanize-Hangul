@@ -87,9 +87,13 @@ my $PEAK_LETTER = [map {$_ eq '-' ? '' : $_} qw(
     wo  we  wi  yu  eu  ui  i
 )];
 my $FINAL_LETTER = [map {$_ eq '-' ? '' : $_} qw(
-    -   g   kk  ks  n   nj  nh  d   r   rg  rm  rb  rs  rt
-    rp  rh  m   b   bs  s   ss  ng  j   c   k   t   p   h
+    -   g   kk  ks  n   nj  nh  d   r   lg  lm  lb  ls  lt
+    lp  lh  m   b   ps  s   ts  ng  j   c   k   t   p   h
 )];
+# my $FINAL_LETTER = [map {$_ eq '-' ? '' : $_} qw(
+#     -   g   kk  ks  n   nj  nh  d   r   rg  rm  rb  rs  rt
+#     rp  rh  m   b   bs  s   ss  ng  j   c   k   t   p   h
+# )];
 
 # ----------------------------------------------------------------
 sub new {
