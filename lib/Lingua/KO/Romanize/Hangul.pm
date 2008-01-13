@@ -88,7 +88,7 @@ my $PEAK_LETTER = [map {$_ eq '-' ? '' : $_} qw(
 )];
 my $FINAL_LETTER = [map {$_ eq '-' ? '' : $_} qw(
     -   g   kk  ks  n   nj  nh  d   r   lg  lm  lb  ls  lt
-    lp  lh  m   b   ps  s   ts  ng  j   c   k   t   p   h
+    lp  lh  m   b   ps  s   ss  ng  j   c   k   t   p   h
 )];
 # my $FINAL_LETTER = [map {$_ eq '-' ? '' : $_} qw(
 #     -   g   kk  ks  n   nj  nh  d   r   rg  rm  rb  rs  rt
