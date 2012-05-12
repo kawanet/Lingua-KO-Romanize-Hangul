@@ -9,18 +9,29 @@ doit () {
     $* || die "[ERROR:$?]"
 }
 
-egrep -v '^t/.*\.t$' MANIFEST > MANIFEST~
+[ -f Makefile ] && doit perl Makefile.PL
+[ -f Makefile ] && doit make clean
+[ -f Makefile.old ] && doit /bin/rm -f Makefile.old
+[ -f META.yml ] || doit touch META.yml
+
+egrep -v '^(lib/.*\.pm|t/.*\.t)$' MANIFEST > MANIFEST~
+ls Makefile.PL README Changes MANIFEST META.yml COPYING >> MANIFEST~ 2> /dev/null
+find lib -type f -name '*.pm' >> MANIFEST~
 ls t/*.t >> MANIFEST~
+LC_ALL=C sort MANIFEST~ | uniq > MANIFEST~~
+/bin/mv -f MANIFEST~~ MANIFEST~
 diff MANIFEST MANIFEST~ > /dev/null || doit /bin/mv -f MANIFEST~ MANIFEST
 /bin/rm -f MANIFEST~
 
-[ -f Makefile ] && doit make clean
-[ -f META.yml ] || touch META.yml
 doit perl Makefile.PL
-doit make
+doit make metafile
+newmeta=`ls -t */META.yml | head -1`
+diff META.yml $newmeta > /dev/null || doit /bin/cp -f $newmeta META.yml
+
 doit make disttest
 
-main=`grep 'lib/.*pm$' < MANIFEST | head -1`
+name=`grep '^name:' META.yml | sed 's#^.*: *##; s#-#/#g;'`
+main=`grep "$name.pm$" < MANIFEST | head -1`
 [ "$main" == "" ] && die "main module is not found in MANIFEST"
 doit pod2text $main > README~
 diff README README~ > /dev/null || doit /bin/mv -f README~ README
@@ -29,7 +40,6 @@ diff README README~ > /dev/null || doit /bin/mv -f README~ README
 doit make dist
 [ -d blib ] && doit /bin/rm -fr blib
 [ -f pm_to_blib ] && doit /bin/rm -f pm_to_blib
-[ -f Makefile ] && doit /bin/rm -f Makefile
 [ -f Makefile.old ] && doit /bin/rm -f Makefile.old
 
 ls -lt *.tar.gz | head -1

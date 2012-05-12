@@ -1,11 +1,11 @@
-Makefile.PL
-lib/Lingua/KO/Romanize/Hangul.pm
-README
+Changes
 MANIFEST
 META.yml
-Changes
-t/sample.utf8
+Makefile.PL
+README
+lib/Lingua/KO/Romanize/Hangul.pm
 t/00_pod.t
 t/01_hangul.t
 t/02_many.t
 t/11_utf8.t
+t/sample.utf8
